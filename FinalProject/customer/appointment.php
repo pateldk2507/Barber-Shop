@@ -55,7 +55,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Need Hair styling</h5>
                           <p class="card-text">We have professional team of hair styling which definatly gives you a better look you wanted to..</p>
-                          <a href="#" class="btn btn-primary">Book it now!</a>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book it now!</a>
                         </div>
                       </div>
                 </div>
@@ -66,7 +66,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Want to colour your hair?</h5>
                           <p class="card-text">We have variety of hair color available from the famous brand you love.</p>
-                          <a href="#" class="btn btn-primary">Book it now!</a>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book it now!</a>
                         </div>
                       </div>
                 </div>
@@ -76,14 +76,61 @@
                         <div class="card-body">
                           <h5 class="card-title">Do you have acne or any skin problem?</h5>
                           <p class="card-text">Don't worry we'll take care of your skin and we guarantee that our treatment gives 100% of result within 30 days.</p>
-                          <a href="#" class="btn btn-primary">Book it now!</a>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book it now!</a>
                         </div>
                       </div>
                 </div>
             </div>
+
+<!-- Appointment modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Appointment Booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form>
+  <div class="form-row">
+    <div class="form-group col-sm">
+      <label for="inputEmail4">Date</label>
+      <input type="date" class="form-control" name="setTodaysDate" id="inputEmail4">
+    </div>
+    <div class="form-group col-sm mt-2">
+      <!-- <label for="inputPassword4">Select Barber</label> -->
+      <div class="dropdown col-sm">
+        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+    Select Barber
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+    </div> 
+    <div class="form-group col-sm">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 
-
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
+</script>
 
 </body>
 </html>
